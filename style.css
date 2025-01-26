@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+        /* background-color: #f7f7f7; */
+}
+ #title{
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 10px;
+    /* margin-bottom: 20px; */
+
+ }
+.music-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.186);
+    border-radius: 15px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    position: relative;
+    width: 350px;
+}
+
+.img-container {
+    width: 100%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+    will-change: transform;
+}
+.artist-name-song-img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+#mini-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+.music-container.play .img-container img {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: 0;
+    color: #333;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.action-btn-big {
+    font-size: 30px;
+}
+
+.progress-container {
+   width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 20px; */
+}
+.progress{
+    /* height: 10px; */
+    width: 60%;
+    /* background-color: #0f97e1; */
+    margin: 0 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+button i{
+    font-size: 1.5rem;
+    color: #000;
+}
+#play i{
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    /* text-align: center; */
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 2rem;
+}

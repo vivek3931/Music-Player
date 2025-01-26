@@ -19,13 +19,17 @@ A simple and interactive music player built using HTML, CSS, and JavaScript. Thi
 
 ## Project Structure
 
-```plaintext
 📂 Music Player
-
+├── 📁 assets
+│   ├── 🎵 music/
+│   │   └── track1.mp3
+│   │   └── track2.mp3
+│   └── 📸 images/
+│       └── cover1.jpg
+│       └── cover2.jpg
 ├── 📄 index.html
 ├── 📄 styles.css
 └── 📄 script.js
-```
 
 Future Improvements
 Add shuffle and repeat functionalities.
