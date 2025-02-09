@@ -17,19 +17,33 @@ A simple and interactive music player built using HTML, CSS, and JavaScript. Thi
 - **CSS3**: For styling the interface with responsive design.
 - **JavaScript (ES6)**: For player functionality and interactivity.
 
+## 📸 Preview
+
+![Project Screenshot](./img/music-player-ss.png)
+
+## 🚀 Live Demo
+
+🔗 [Check it out here](https://viveks-music-player.netlify.app/)
+
+## 📬 Contact
+
+📧 Email: viveks3931@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/vivek3931/) | [GitHub](https://github.com/vivek3931) 
+
 ## Project Structure
 
 📂 Music Player
 ├── 📁 assets
 │   ├── 🎵 music/
-│   │   └── track1.mp3
+│   │   ├── track1.mp3
 │   │   └── track2.mp3
 │   └── 📸 images/
-│       └── cover1.jpg
+│       ├── cover1.jpg
 │       └── cover2.jpg
 ├── 📄 index.html
 ├── 📄 styles.css
 └── 📄 script.js
+
 
 Future Improvements
 Add shuffle and repeat functionalities.

@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: Poppins, sans-serif;
 }
 
 .container {
@@ -11,17 +11,19 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
-        /* background-color: #f7f7f7; */
+    /* animation: backgroundAnimation 10s infinite alternate; */
 }
- #title{
+
+#title {
     margin-bottom: 1rem;
     color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     padding-top: 10px;
     /* margin-bottom: 20px; */
 
- }
+}
+
 .music-container {
     display: flex;
     flex-direction: column;
@@ -51,32 +53,38 @@
     animation-play-state: paused;
     will-change: transform;
 }
-.artist-name-song-img{
+
+.artist-name-song-img {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px 0;
 }
-#mini-img{
+
+#mini-img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
-}
-.music-container.play .img-container img {
-    animation-play-state: running;
+    animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
     from {
-        rotate: 0deg;
+        transform: rotate(0deg);
     }
 
     to {
-        rotate: 360deg;
+        transform: rotate(360deg);
     }
+}
+
+span {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    font-weight: 550;
 }
 
 .navigation {
@@ -94,6 +102,7 @@
     padding: 10px;
     margin: 0 20px;
     cursor: pointer;
+    /* background-image: url(./img/gif_equilizer.gif); */
 }
 
 .action-btn-big {
@@ -101,37 +110,108 @@
 }
 
 .progress-container {
-   width: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin-top: 20px; */
 }
-.progress{
-    /* height: 10px; */
+.gif{
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    transition: opacity 0.4s ease-in-out;
+    opacity: 0;
+    /* object-fit: fill; */
+}
+.progress {
     width: 60%;
-    /* background-color: #0f97e1; */
-    margin: 0 10px;
-    outline: none;
-    border: none;
-    border-radius: 10px;
+    -webkit-appearance: none;
+    background: transparent;
     cursor: pointer;
 }
 
-
-button i{
-    font-size: 1.5rem;
-    color: #000;
+.progress::-webkit-slider-runnable-track {
+    height: 8px;
+    background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
-#play i{
+
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: -5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.progress:hover::-webkit-slider-thumb {
+    transform: scale(1.2);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.progress:focus {
+    outline: none;
+}
+
+button i {
+    font-size: 1.5rem;
+    background-clip: text;
+    color: #3F2B96;
+    /* color: #000; */
+    outline: none;
+    filter: drop-shadow(5px 5px 10px rgba(179, 178, 178, 0.967));
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+#play i {
+    position:relative;
     height: 70px;
     width: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
-    /* text-align: center; */
+    filter: none;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    background-position: center;
     padding: 10px;
     border-radius: 50%;
     font-size: 2rem;
+    transition:all 0.4s ease-in-out;
+    animation: pulse 2s infinite;
+}
+@media (max-width: 768px) {
+    .loader-container {
+        background-size: 20%;
+    }
+    /* body{
+        cursor: progress;
+    } */
+}
+.loader-container {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+
+    background-position: center;
+    z-index: 100;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    /* background-size: 50%; */
+    background-repeat: no-repeat;
+
 }
